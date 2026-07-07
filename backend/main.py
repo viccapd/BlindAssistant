@@ -155,7 +155,7 @@ Usa solamente 50 palabras.
 
 @app.post("/weather")
 
-def object(data: ImageRequest):
+def weather(data: ImageRequest):
 
     prompt = """
 Describe el clima
