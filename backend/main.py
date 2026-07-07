@@ -89,11 +89,8 @@ Prioriza seguridad.
 def ocr(data: ImageRequest):
 
     prompt = """
-Lee todo el texto visible.
-
-Incluye etiquetas.
-
-Máximo 50 palabras.
+Lee todo el texto visible, evitando texto de fondo, marcas de agua o elementos decorativos.
+Conserva el orden de lectura, los saltos de línea, la puntuación y las etiquetas o encabezados presentes.
 """
 
     texto = analizar(
@@ -114,8 +111,8 @@ Máximo 50 palabras.
 def money(data: ImageRequest):
 
     prompt = """
-Identifica billetes y monedas.
-
+Identifica cuidadosamente billetes y monedas visibles.
+Si la imagen no permite una identificación confiable, responde "No se puede determinar con certeza" en lugar de adivinar.
 Responde únicamente:
 
 valor total y moneda.
