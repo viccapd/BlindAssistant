@@ -126,7 +126,29 @@ valor total y moneda.
     return {
         "result": texto
     }
-    
+
+# =====================================================
+# Reconocer Objetos
+# =====================================================
+
+@app.post("/object")
+
+def object(data: ImageRequest):
+
+    prompt = """
+Describe solamente el objeto que se encuentra en la imagen en primer plano, ignora el fondo personas y objetos secundarios.
+Usa solamente 50 palabras.
+"""
+
+    texto = analizar(
+        data.image,
+        prompt
+    )
+
+    return {
+        "result": texto
+    }
+
 # =====================================================
 # FRONTEND
 # =====================================================
@@ -136,6 +158,7 @@ app.mount(
     StaticFiles(directory="../frontend"),
     name="static"
 )
+
 
 @app.get("/")
 async def home():
