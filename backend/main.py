@@ -48,7 +48,7 @@ def analizar(imagen_b64, prompt):
     return respuesta.text
 
 # =====================================================
-# ENTORNO
+# AYUDA AL CAMINAR
 # =====================================================
 
 @app.post("/environment")
