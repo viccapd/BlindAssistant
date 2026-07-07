@@ -150,6 +150,26 @@ Usa solamente 50 palabras.
     }
 
 # =====================================================
+# CLIMA
+# =====================================================
+
+@app.post("/weather")
+
+def object(data: ImageRequest):
+
+    prompt = """
+Describe el clima
+"""
+
+    texto = analizar(
+        data.image,
+        prompt
+    )
+
+    return {
+        "result": texto
+    }
+# =====================================================
 # FRONTEND
 # =====================================================
 
